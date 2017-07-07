@@ -112,7 +112,7 @@ post '/user_update' do
   @user = User.find(params[:user_id])
   @user.update(username: params[:username], password: params[:password], firstname: params[:firstname], lastname: params[:lastname], email: params[:email])
   flash[:notice] = "Successfully updated your profile."
-  redirect '/user_profile'
+  redirect '/user_profile/#{params[:user_id]}'
 end
 
 # ======= USER: DELETE ACCOUNT =======
